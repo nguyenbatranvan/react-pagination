@@ -1,6 +1,6 @@
 {
-  "name": "react-pagination",
-  "version": "0.0.0",
+  "name": "@v/react-pagination",
+  "version": "0.0.1",
   "type": "module",
   "exports": {
     ".": {
@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "build": "rslib build",
+    "publish": "pnpm publish --access public",
     "dev": "rslib build --watch"
   },
   "devDependencies": {
