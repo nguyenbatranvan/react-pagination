@@ -13,7 +13,7 @@ type TPropsUseCustomPagination<T extends BaseParams> = {
 } & Omit<Partial<UsePaginationOptions>, "onChange">;
 
 
-export const useCustomPagination = <T extends BaseParams, >(props: TPropsUseCustomPagination<T>) => {
+export const useReactPagination = <T extends BaseParams, >(props: TPropsUseCustomPagination<T>) => {
     const {totalItem, params, onPageChange, ...rest} = props;
     const {limit = 10} = params || {};
     const [max, setMax] = useState(0);

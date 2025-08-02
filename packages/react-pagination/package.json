@@ -2,6 +2,17 @@
   "name": "@v/react-pagination",
   "version": "0.0.1",
   "type": "module",
+  "license": "MIT",
+  "description": "Pagination for React",
+  "author": "Van nguyen ba tran",
+  "private": false,
+  "sideEffects": false,
+  "bugs": "https://github.com/nguyenbatranvan/react-pagination/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nguyenbatranvan/react-pagination",
+    "directory": "packages/react-pagination"
+  },
   "exports": {
     ".": {
       "types": "./dist/esm/index.d.ts",
@@ -13,6 +24,11 @@
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "pagination",
+    "headless pagination"
   ],
   "scripts": {
     "build": "rslib build",

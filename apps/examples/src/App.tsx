@@ -1,7 +1,7 @@
-import {Pagination, PaginationWrap, useCustomPagination} from "react-pagination";
+import {Pagination, PaginationWrap, useReactPagination} from "@v/react-pagination";
 
 const App = () => {
-    const pagination = useCustomPagination({
+    const pagination = useReactPagination({
         totalItem: 100,
         params: {
             limit: 10,
@@ -11,19 +11,26 @@ const App = () => {
 
         }
     })
+    const disabledClassName = {
+        className: "disabled"
+    }
     return (
         <div>
             <PaginationWrap {...pagination}>
                 <Pagination.Root>
-                    <Pagination.First>
+                    <Pagination.First disabledProps={disabledClassName}>
                         fist
                     </Pagination.First>
-                    <Pagination.Previous>
+                    <Pagination.Previous disabledProps={disabledClassName}>
                         prev
                     </Pagination.Previous>
                     <Pagination.Content>
                         {(item) => <>
-                            <Pagination.Item>
+                            <Pagination.Item className={"base-class"}} activeProps={{
+                                className: "my-active",
+                            }} inactiveProps={{
+                                className: "inactive"
+                            }}>
                                 {item}
                             </Pagination.Item>
                             <Pagination.Dot>
@@ -31,10 +38,10 @@ const App = () => {
                             </Pagination.Dot>
                         </>}
                     </Pagination.Content>
-                    <Pagination.Next>
+                    <Pagination.Next disabledProps={disabledClassName}>
                         next
                     </Pagination.Next>
-                    <Pagination.Last>
+                    <Pagination.Last disabledProps={disabledClassName}>
                         last
                     </Pagination.Last>
                 </Pagination.Root>

@@ -1,23 +1,86 @@
-# Rslib project
+# React Pagination
+- This is unstyled/headless pagination for React
+- All styling is customizable to you
+- Zero dependencies
+## Install
+`npm i @v/react-pagination`
+## Usage
 
-## Setup
+```jsx
+import {Pagination, PaginationWrap, useReactPagination} from "@v/react-pagination";
 
-Install the dependencies:
+const App = () => {
+    const pagination = useReactPagination({
+        totalItem: 100,
+        params: {
+            limit: 10,
+            offset: 0
+        },
+        onPageChange: () => {
 
-```bash
-pnpm install
+        }
+    })
+    const disabledClassName = {
+        className: "disabled"
+    }
+    return (
+        <div>
+            <PaginationWrap {...pagination}>
+                <Pagination.Root>
+                    <Pagination.First disabledProps={disabledClassName}>
+                        fist
+                    </Pagination.First>
+                    <Pagination.Previous disabledProps={disabledClassName}>
+                        prev
+                    </Pagination.Previous>
+                    <Pagination.Content>
+                        {(item) => <>
+                            <Pagination.Item className={"base-class"}} activeProps={{
+                                className: "my-active",
+                            }} inactiveProps={{
+                                className: "inactive"
+                            }}>
+                                {item}
+                            </Pagination.Item>
+                            <Pagination.Dot>
+                                ...
+                            </Pagination.Dot>
+                        </>}
+                    </Pagination.Content>
+                    <Pagination.Next disabledProps={disabledClassName}>
+                        next
+                    </Pagination.Next>
+                    <Pagination.Last disabledProps={disabledClassName}>
+                        last
+                    </Pagination.Last>
+                </Pagination.Root>
+            </PaginationWrap>
+        </div>
+    );
+};
+
+export default App;
+
 ```
 
-## Get started
+## Options
+### Hooks `useCustomPagination`
+#### `totalItems` 
+-  total count of items for pagination
+#### `params` 
+- `limit`  is the number of items you want to show on each page
+- `offset` the default starting item count is `0`
+#### `onPageChange`
+- when the page changes, this method gets triggered with `params` and `page` included
+### Components
 
-Build the library:
+#### `activeProps` & `inactiveProps`
+- use for `Pagination.Item` to add className and styling for the active current page
 
-```bash
-pnpm build
-```
+#### `disabledProps` use for:
+- `Pagination.First`
+- `Pagination.Prev`
+- `Pagination.Next`
+- `Pagination.Last`
 
-Build the library in watch mode:
-
-```bash
-pnpm dev
-```
+This attribute is applied when the user moves to the first page or the last page. If you don't want to use the disabled state, you can omit this `prop`
