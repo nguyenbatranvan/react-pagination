@@ -1,4 +1,3 @@
-import './App.css';
 import {Pagination, PaginationWrap, useCustomPagination} from "react-pagination";
 
 const App = () => {
