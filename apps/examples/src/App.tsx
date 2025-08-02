@@ -1,4 +1,4 @@
-import {Pagination, PaginationWrap, useReactPagination} from "@v/react-pagination";
+import {Pagination, PaginationWrap, useReactPagination} from "react-headless-pagination";
 
 const App = () => {
     const pagination = useReactPagination({
@@ -26,7 +26,7 @@ const App = () => {
                     </Pagination.Previous>
                     <Pagination.Content>
                         {(item) => <>
-                            <Pagination.Item className={"base-class"}} activeProps={{
+                            <Pagination.Item className={"base-class"} activeProps={{
                                 className: "my-active",
                             }} inactiveProps={{
                                 className: "inactive"

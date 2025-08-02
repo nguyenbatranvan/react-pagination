@@ -11,7 +11,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@v/react-pagination": "workspace:*",
+    "react-headless-pagination": "workspace:*",
     "@rsbuild/core": "^1.4.3",
     "@rsbuild/plugin-react": "^1.3.3",
     "@types/react": "^18.3.18",
