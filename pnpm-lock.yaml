@@ -39,7 +39,7 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.5
         version: 18.3.7(@types/react@18.3.23)
-      react-headless-pagination:
+      react-headless-paginate:
         specifier: workspace:*
         version: link:../../packages/react-pagination
       typescript:

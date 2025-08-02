@@ -3,11 +3,11 @@
 - All styling is customizable to you
 - Zero dependencies
 ## Install
-`npm i react-headless-pagination`
+`npm i react-headless-paginate`
 ## Usage
 
 ```jsx
-import {Pagination, PaginationWrap, useReactPagination} from "react-headless-pagination";
+import {Pagination, PaginationWrap, useReactPagination} from "react-headless-paginate";
 
 const App = () => {
     const pagination = useReactPagination({

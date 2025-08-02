@@ -1,4 +1,4 @@
-import {Pagination, PaginationWrap, useReactPagination} from "react-headless-pagination";
+import {Pagination, PaginationWrap, useReactPagination} from "react-headless-paginate";
 
 const App = () => {
     const pagination = useReactPagination({
